@@ -1,0 +1,107 @@
+/* Mobile devices (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    /* Header */
+    #header .inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gnb {
+        display: none; /* Hide navigation on mobile */
+        width: 100%;
+    }
+
+    .gnb.active {
+        display: block;
+    }
+
+    .gnb ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .gnb li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn_menu {
+        display: block; /* Show hamburger menu on mobile */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .btn_menu span {
+        display: block;
+        height: 2px;
+        background: #333;
+        margin-bottom: 6px;
+    }
+
+    /* Main Visual */
+    .main_visual {
+        height: 300px; /* Smaller height for mobile */
+    }
+
+    .main_visual .tit {
+        font-size: 1.8em;
+    }
+
+    .main_visual .desc {
+        font-size: 1em;
+    }
+
+    /* Content Sections */
+    .cont1 .list, .cont2 .list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont1 .list li, .cont2 .list li {
+        width: 90%; /* Adjust width for mobile */
+        max-width: 400px;
+    }
+
+    /* Footer */
+    .f_info span {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Tablet devices (portrait and landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Header */
+    .gnb li {
+        margin-left: 20px;
+    }
+
+    /* Main Visual */
+    .main_visual {
+        height: 400px;
+    }
+
+    .main_visual .tit {
+        font-size: 2.2em;
+    }
+
+    .main_visual .desc {
+        font-size: 1.1em;
+    }
+
+    /* Content Sections */
+    .cont1 .list li, .cont2 .list li {
+        flex: 0 0 calc(50% - 30px); /* Two columns on tablet */
+        max-width: none;
+    }
+}
+
+/* Desktop devices */
+@media only screen and (min-width: 1025px) {
+    /* No specific changes needed here as base styles are for desktop */
+}

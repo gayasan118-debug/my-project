@@ -1,0 +1,25 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gayasan118-debug/-my-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gayasan118-debug/-my-website/issues"
+  },
+  "homepage": "https://gayasan118-debug.github.io/-my-website",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
