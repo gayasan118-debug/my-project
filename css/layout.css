@@ -15,7 +15,7 @@ html,body{height: 100%;font-family:'Noto Sans KR',sans-serif;}
 .jost_font {font-family: 'Jost', sans-serif;}
 .pre_font {font-family: 'Pretendard', sans-serif;}
 
-.wrap{position: relative;min-width: 1300px;margin:0 auto; max-width: 2000px; }
+.wrap{position: relative;margin:0 auto; max-width: 2000px; }
 .inner{position: relative;max-width: 1300px;margin: 0 auto;}
 .sub .inner {max-width: 1200px;}
 
