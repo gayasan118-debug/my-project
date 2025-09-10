@@ -1,0 +1,159 @@
+/* Mobile devices (portrait and landscape) */
+@media only screen and (max-width: 767px) {
+    /* Header */
+    #header .inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .gnb {
+        display: none; /* Hide navigation on mobile */
+        width: 100%;
+    }
+
+    .gnb.active {
+        display: block;
+    }
+
+    .gnb ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .gnb li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .btn_menu {
+        display: block; /* Show hamburger menu on mobile */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .btn_menu span {
+        display: block;
+        height: 2px;
+        background: #333;
+        margin-bottom: 6px;
+    }
+
+    /* Main Visual */
+    .main_visual {
+        height: 300px; /* Smaller height for mobile */
+    }
+
+    .main_visual .tit {
+        font-size: 1.8em;
+    }
+
+    .main_visual .desc {
+        font-size: 1em;
+    }
+
+    /* Content Sections */
+    .cont1 .list, .cont2 .list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cont1 .list li, .cont2 .list li {
+        width: 100%; /* Ensure full width on mobile */
+        margin-bottom: 20px; /* Add spacing between stacked items */
+    }
+
+    /* Hide less critical sections on mobile */
+    .section.sec3.con03,
+    .section.sec4.con04 {
+        display: none;
+    }
+
+    /* Footer */
+    .f_info span {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Tablet devices (portrait and landscape) */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Header */
+    .gnb li {
+        margin-left: 20px;
+    }
+
+    /* Main Visual */
+    .main_visual {
+        height: 400px;
+    }
+
+    .main_visual .tit {
+        font-size: 2.2em;
+    }
+
+    .main_visual .desc {
+        font-size: 1.1em;
+    }
+
+    /* Content Sections */
+    .cont1 .list li, .cont2 .list li {
+        flex: 0 0 calc(50% - 30px); /* Two columns on tablet */
+        max-width: none;
+    }
+}
+
+/* Desktop devices (1025px and up) - Base styles are generally for desktop */
+/* Specific adjustments for 1024px and 1280px fixed resolutions */
+
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+    /* Adjustments for screens between 1024px and 1279px */
+    .inner {
+        max-width: 960px; /* Slightly smaller inner width */
+    }
+
+    .gnb li {
+        margin-left: 25px;
+    }
+
+    .main_visual {
+        height: 450px;
+    }
+
+    .main_visual .tit {
+        font-size: 2.3em;
+    }
+
+    .cont1 .list li, .cont2 .list li {
+        flex: 0 0 calc(33.33% - 20px); /* Three columns, adjust gap */
+        min-width: unset;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    /* Adjustments for screens 1280px and up */
+    .inner {
+        max-width: 1180px; /* Standard desktop width */
+    }
+
+    .gnb li {
+        margin-left: 30px;
+    }
+
+    .main_visual {
+        height: 500px;
+    }
+
+    .main_visual .tit {
+        font-size: 2.5em;
+    }
+
+    .cont1 .list li, .cont2 .list li {
+        flex: 0 0 calc(33.33% - 20px); /* Three columns, adjust gap */
+        min-width: unset;
+    }
+}
