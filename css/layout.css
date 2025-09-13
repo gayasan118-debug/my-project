@@ -612,18 +612,7 @@ header .sub .open_date{display: block;line-height: 32px;border-radius: 16px;widt
     color: #000;
     font-weight: 700;
 }
-#main .con02 .con02_swiper {
-    position: absolute;
-    /* bottom: calc(90 / 1070 * 100vh);    
-    left: calc(460 / 2000 * 100vw);         
-    width: calc(710 / 2000 * 100vw);    */
-    bottom: 73px;    
-    left: 460px;         
-    width: 710px;   
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    /* z-index: -1; */
-}
+
 #main .con02 .con02_swiper .item {
     overflow: hidden;
     position: relative;

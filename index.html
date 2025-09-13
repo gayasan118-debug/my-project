@@ -1029,6 +1029,23 @@ var g5_cookie_domain = "";
             $('.gnb').toggleClass('active');
         });
 
+        // Mobile submenu toggle
+        $('.gnb > li > a').on('click', function(e) {
+            var $parentLi = $(this).parent('li');
+            var $submenu = $(this).siblings('.depth02');
+
+            if ($(window).width() <= 768 && $submenu.length > 0) {
+                // If it has a submenu, prevent default link behavior on mobile
+                e.preventDefault();
+                // Toggle active class on the parent li
+                $parentLi.toggleClass('active');
+                // Slide toggle the submenu
+                $submenu.slideToggle();
+                // Close other open submenus
+                $parentLi.siblings().removeClass('active').find('.depth02').slideUp();
+            }
+        });
+
         $('#h_top_btn').on('click', function () {
             if ($(window).width() > 768) {
                 $.fn.fullpage.moveTo(1);

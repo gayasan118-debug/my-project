@@ -20,6 +20,13 @@ body {
 }
 
 /* Header */
+header {
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: visible; /* Allow menu to be visible */
+}
+
 header .header-inner {
     flex-direction: row;
     justify-content: space-between;
@@ -30,21 +37,25 @@ header .header-inner {
 
 header .logo {
     padding: 0;
+    z-index: 1001;
 }
 
 header .logo img {
-    height: 40px;
+    height: 35px;
 }
 
 header .gnb {
     display: none;
-    position: absolute;
-    top: 60px;
+    position: fixed; /* Changed to fixed for full-screen overlay */
+    top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
-    border-top: 1px solid #eee;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
     flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    z-index: 1000;
 }
 
 header .gnb.active {
@@ -52,26 +63,38 @@ header .gnb.active {
 }
 
 header .gnb > li {
-    width: 100%;
+    width: 80%;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
 
+header .gnb > li:last-child {
+    border-bottom: none;
+}
+
 header .gnb > li > a {
-    padding: 15px 0;
+    padding: 20px 0;
     width: 100%;
+    font-size: 1.2em;
+    font-weight: 500;
 }
 
 header .gnb .depth02 {
-    display: none;
+    display: none; /* Submenu hidden by default */
     position: static;
     width: 100%;
     padding: 0;
+    background-color: #f0f0f0;
+}
+
+header .gnb > li.active .depth02 {
+    display: block; /* Show submenu when parent is active */
 }
 
 header .gnb .depth02 li a {
-    padding: 10px 0;
-    background-color: #f8f8f8;
+    padding: 15px 0;
+    font-size: 1em;
+    color: #555;
 }
 
 .header-right-menu {
@@ -81,10 +104,10 @@ header .gnb .depth02 li a {
 /* Hamburger Menu */
 .mobile-menu-button {
     display: block;
-    position: absolute;
+    position: fixed; /* Use fixed positioning */
     right: 15px;
     top: 15px;
-    z-index: 100;
+    z-index: 1001; /* Make sure it's on top of the menu */
     background: none;
     border: none;
     cursor: pointer;
@@ -96,6 +119,10 @@ header .gnb .depth02 li a {
     background-color: #333;
     margin: 5px 0;
     transition: all 0.3s ease-in-out;
+}
+
+.mobile-menu-button.active .line {
+    background-color: #333; /* Change color when active */
 }
 
 .mobile-menu-button.active .line:nth-child(1) {
@@ -116,34 +143,64 @@ header .gnb .depth02 li a {
     padding: 40px 0;
 }
 
+.mv_slide .item .bg {
+    height: 100vh; /* Full viewport height */
+}
+
+.mv_slide .item .bg img {
+    object-fit: cover;
+}
+
 .mv_slide .item .txt_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     padding: 20px;
     text-align: center;
-    position: static;
-    transform: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    color: #fff;
 }
 
 .mv_slide .item .txt_wrap .txt01 {
-    font-size: 18px;
+    font-size: 1em;
+    color: #fff;
 }
 
 .mv_slide .item .txt_wrap .txt02 {
-    font-size: 36px;
-    padding: 15px 0;
+    font-size: 2em;
+    padding: 10px 0;
+    color: #fff;
 }
 
 .mv_slide .item .txt_wrap .txt03 {
-    font-size: 14px;
+    font-size: 0.9em;
+    color: #fff;
+}
+
+.mv_slide .item .txt_wrap.type02 {
+    background: none;
+}
+
+.mv_slide .item .txt_wrap .txt02 b {
+    color: #fdd000;
 }
 
 .con02 .inner, .con03 #loc, .con04 .inner, .con05 .flex_box {
     flex-direction: column;
 }
 
-.con02 .con02_swiper, .con02 .con02_swiper_thumb_wrap {
+.con02 .con02_swiper_wrap, .con02 .con02_swiper_thumb_wrap {
     position: static;
     width: 100%;
     margin-top: 20px;
+    right: 0;
+}
+
+.con02_swiper_thumb {
+    width: 100%;
 }
 
 .con03 .loc-l, .con03 .loc-r {
@@ -164,12 +221,56 @@ footer .f_inner {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 0 15px;
 }
 
 footer .left_box {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .inner {
+        width: 85%;
+    }
+
+    header .gnb {
+        /* Keep it as a full-screen overlay for tablets as well, or adjust as needed */
+    }
+
+    .mv_slide .item .txt_wrap {
+        width: 80%;
+    }
+
+    .mv_slide .item .txt_wrap .txt01 {
+        font-size: 1.2em;
+    }
+
+    .mv_slide .item .txt_wrap .txt02 {
+        font-size: 2.5em;
+    }
+
+    .mv_slide .item .txt_wrap .txt03 {
+        font-size: 1em;
+    }
+
+    .con02 .inner, .con04 .inner {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .con02 .con_txt_box, .con04 .left_box {
+        width: 100%;
+        text-align: center;
+    }
+
+    .con02 .slide_txt_box_wrap, .con04 .right_box {
+        width: 100%;
+        margin-top: 30px;
+    }
 }
 
 
