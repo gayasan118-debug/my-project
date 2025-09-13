@@ -45,7 +45,6 @@ header {
     transition: all 0.3s;
     text-align: center;
     height: 90px;
-    overflow: hidden;
 }
 
 header.active {
@@ -138,20 +137,33 @@ header .gnb > li > a::after {
     background-color: var(--secondary-color);
     transition: all 0.3s;
 }
-header .gnb > li:hover > a,
-header .gnb > li.active > a {
-    color: var(--secondary-color);
-    font-weight: 500;
-}
-header .gnb > li:hover > a::after {    
-    width: 80%;
-}
-header .gnb .depth02 {
-    padding: 25px 0 35px;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
+@media (min-width: 769px) {
+    header .gnb > li:hover > a,
+    header .gnb > li.active > a {
+        color: var(--secondary-color);
+        font-weight: 500;
+    }
+    header .gnb > li:hover > a::after {    
+        width: 80%;
+    }
+    header .gnb .depth02 {
+        display: block; /* Show on hover on desktop */
+        padding: 25px 0 35px;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s;
+    }
+
+    header .gnb > li:hover .depth02 {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
 }
 header .gnb .depth02 > li > a {
     display: flex;
