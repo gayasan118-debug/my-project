@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -62,7 +61,7 @@ header .gnb {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: 240px; /* Reduced width */
     height: 100%;
     background-color: #fff;
     z-index: 1000;
@@ -80,7 +79,7 @@ header .gnb.active {
 
 header .gnb > li {
     width: 100%;
-    text-align: right;
+    text-align: left; /* Changed to left */
     border-bottom: 1px solid #eee;
 }
 
@@ -106,10 +105,10 @@ header .gnb .depth02 {
 }
 
 header .gnb .depth02 li a {
-    padding: 12px 25px;
+    padding: 12px 25px; /* Indent submenu items */
     font-size: 1em;
     color: #444;
-    text-align: right;
+    text-align: left; /* Changed to left */
 }
 
 /* Hamburger Menu */
