@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -8,14 +9,7 @@ body {
 }
 
 .wrap {
-    transition: transform 0.3s ease-in-out;
     background-color: #fff; /* Ensure wrap has a background */
-    transform-origin: center; /* Scale from the center */
-}
-
-.wrap.menu-open {
-    transform: scale(0.9); /* Only scale down */
-    overflow: hidden; /* Prevent scrollbars during animation */
 }
 
 #hd, #wrapper, #ft, .wrap {
@@ -67,18 +61,21 @@ header .gnb {
     display: block;
     position: fixed;
     top: 0;
-    right: -280px;
+    right: 0;
     width: 280px;
     height: 100%;
     background-color: #fff;
     z-index: 1000;
     padding-top: 60px;
     box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-    transition: right 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 header .gnb.active {
-    right: 0;
+    opacity: 1;
+    visibility: visible;
 }
 
 header .gnb > li {
@@ -124,6 +121,7 @@ header .gnb .depth02 li a {
     cursor: pointer;
     background: none;
     border: none;
+    z-index: 1001; /* Above the menu */
 }
 
 .mobile-menu-button .line {
