@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -96,7 +97,7 @@ header .gnb > li > a {
 }
 
 header .gnb .depth02 {
-    display: none !important; /* Force hide by default */
+    display: none; /* Removed !important */
     position: static;
     width: 100%;
     padding: 0;
