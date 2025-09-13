@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -180,16 +179,25 @@ header .gnb .depth02 li a {
 }
 
 .con_txt_box .tit {
-    font-size: 36px;
+    font-size: 32px; /* Adjusted font size */
+    line-height: 1.3em; /* Adjusted line height */
+}
+
+.con_txt_box .sub_tit {
+    font-size: 20px; /* Adjusted font size */
+}
+
+.slide_rolling_txt {
+    font-size: 60px; /* Reduced font size for mobile */
 }
 
 .slide_txt_box .slide_txt .tit {
-    font-size: 28px;
+    font-size: 24px; /* Adjusted font size */
 }
 
 .slide_txt_box .slide_sub_txt {
-    font-size: 18px;
-    margin-top: 20px;
+    font-size: 16px; /* Adjusted font size */
+    margin-top: 15px;
 }
 
 .con02_swiper_wrap, .con02_swiper_thumb_wrap {
@@ -214,11 +222,25 @@ header .gnb .depth02 li a {
 }
 
 .loc-title .tit03 {
-    font-size: 28px;
+    font-size: 24px; /* Adjusted font size */
+    line-height: 1.3em;
 }
 
 .loc-info-slide {
-    margin-top: 40px;
+    margin-top: 30px;
+}
+
+.loc-info-tit1 {
+    font-size: 18px; /* Adjusted font size */
+}
+
+.loc-info-sub2 {
+    font-size: 28px; /* Adjusted font size */
+}
+
+.loc-info-sub3 {
+    font-size: 14px; /* Adjusted font size */
+    line-height: 1.6em;
 }
 
 #main .con04 .inner {
@@ -227,6 +249,28 @@ header .gnb .depth02 li a {
 
 #main .con04 .right_box, #main .con04 .left_box {
     width: 100%;
+}
+
+#main .con04 .left_box .tit {
+    font-size: 36px; /* Adjusted font size */
+    line-height: 1.3em;
+}
+
+#main .con04 .left_box .sub_tit {
+    font-size: 18px; /* Adjusted font size */
+}
+
+#main .con04 .b_txt_box .tit {
+    font-size: 24px; /* Adjusted font size */
+}
+
+#main .con04 .b_txt_box .sub_tit {
+    font-size: 18px; /* Adjusted font size */
+    margin-top: 20px;
+}
+
+#main .con04 .b_txt_box .alt {
+    font-size: 14px; /* Adjusted font size */
 }
 
 #main .con04 .t_slide_box {
@@ -244,11 +288,11 @@ header .gnb .depth02 li a {
 }
 
 #main .con05 .right_box .btm_txt_box .t_txt {
-    font-size: 30px;
+    font-size: 24px; /* Adjusted font size */
 }
 
 #main .con05 .right_box .btm_txt_box .b_txt {
-    font-size: 20px;
+    font-size: 16px; /* Adjusted font size */
 }
 
 /* Footer */
