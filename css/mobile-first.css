@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -108,22 +107,25 @@ header .gnb .depth02 li a {
     position: fixed; /* Use fixed positioning */
     right: 15px;
     top: 15px;
-    z-index: 1001; /* Make sure it's on top of the menu */
-    background: none;
-    border: none;
+    z-index: 9999 !important; /* Increased z-index */
+    background: red; /* For debugging */
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
     cursor: pointer;
 }
 
 .mobile-menu-button .line {
     width: 25px;
     height: 3px;
-    background-color: #333;
-    margin: 5px 0;
+    background-color: #fff;
+    margin: 5px auto;
     transition: all 0.3s ease-in-out;
 }
 
 .mobile-menu-button.active .line {
-    background-color: #333; /* Change color when active */
+    background-color: #fff; /* Change color when active */
 }
 
 .mobile-menu-button.active .line:nth-child(1) {
@@ -304,4 +306,21 @@ footer .left_box {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    html, body {
+        height: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .section {
+        height: auto !important;
+        padding: 40px 0;
+    }
+
+    #main {
+        height: auto !important;
+    }
 }
