@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -58,7 +57,7 @@ header .logo img {
 }
 
 header .gnb {
-    display: block;
+    display: none; /* Changed to none */
     position: fixed;
     top: 0;
     right: 0;
@@ -74,6 +73,7 @@ header .gnb {
 }
 
 header .gnb.active {
+    display: block; /* Added block display */
     opacity: 1;
     visibility: visible;
 }
