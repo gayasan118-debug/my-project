@@ -61,7 +61,7 @@ header .gnb {
     position: fixed;
     top: 0;
     right: 0;
-    width: 240px; /* Reduced width */
+    width: 200px; /* Reduced width */
     height: 100%;
     background-color: #fff;
     z-index: 1000;
@@ -79,7 +79,7 @@ header .gnb.active {
 
 header .gnb > li {
     width: 100%;
-    text-align: left; /* Changed to left */
+    text-align: center; /* Changed to center */
     border-bottom: 1px solid #eee;
 }
 
@@ -108,7 +108,7 @@ header .gnb .depth02 li a {
     padding: 12px 25px; /* Indent submenu items */
     font-size: 1em;
     color: #444;
-    text-align: left; /* Changed to left */
+    text-align: center; /* Changed to center */
 }
 
 /* Hamburger Menu */
