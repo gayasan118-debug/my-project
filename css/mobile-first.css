@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -395,4 +396,10 @@ footer .left_box {
     background-size: contain !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
+}
+
+/* Ensure main section containers are visible and have auto height */
+#loc, #info, #guide {
+    height: auto !important;
+    overflow: visible !important;
 }
