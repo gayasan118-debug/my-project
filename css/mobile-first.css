@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -333,44 +332,6 @@ footer .left_box {
     }
 }
 
-/* Image specific adjustments */
-#main .con02 .txt_img {
-    width: 80%; /* Adjust width for mobile */
-    height: auto;
-    margin: 0 auto; /* Center the image */
-    display: block;
-    position: static; /* Remove absolute positioning */
-}
-
-#main .con02 .con02_swiper .item img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* Ensure image fits within its container */
-}
-
-#main .con02_swiper_thumb .item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-#loc .loc-l img {
-    width: 100%;
-    height: auto;
-    position: static; /* Remove absolute positioning */
-}
-
-#main .con04 .t_slide_box .swiper .item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-#main .con05 .right_box img {
-    width: 100% !important; /* Override inline style */
-    height: auto !important;
-}
-
 /* Swiper specific adjustments for mobile when Swiper is not initialized */
 .swiper-wrapper {
     display: block !important; /* Ensure content is stacked */
@@ -390,4 +351,31 @@ footer .left_box {
 
 .swiper-slide-next, .swiper-slide-prev, .swiper-slide-duplicate {
     display: none !important; /* Hide other slides */
+}
+
+/* Force image display within swiper items */
+.con02_swiper .swiper-slide img,
+.con02_swiper_thumb .swiper-slide img,
+#loc .loc-l .swiper-slide img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important; /* Ensure image is fully visible */
+    position: static !important; /* Remove any absolute positioning */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure parent containers are not hiding images */
+.con02_swiper .item,
+.con02_swiper_thumb .item,
+#loc .loc-l .swiper-slide {
+    overflow: visible !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Remove any mask or overlay that might be hiding images */
+.con02_swiper .item .mask {
+    display: none !important;
 }
