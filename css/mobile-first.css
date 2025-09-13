@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -11,10 +10,11 @@ body {
 .wrap {
     transition: transform 0.3s ease-in-out;
     background-color: #fff; /* Ensure wrap has a background */
+    transform-origin: center; /* Scale from the center */
 }
 
 .wrap.menu-open {
-    transform: translateX(-280px) scale(0.9);
+    transform: scale(0.9); /* Only scale down */
     overflow: hidden; /* Prevent scrollbars during animation */
 }
 
@@ -95,17 +95,18 @@ header .gnb > li > a {
 }
 
 header .gnb .depth02 {
-    display: none;
+    display: none !important; /* Force hide by default */
     position: static;
     width: 100%;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #f0f0f0; /* Lighter background for submenu */
+    border-top: 1px solid #e0e0e0;
 }
 
 header .gnb .depth02 li a {
-    padding: 12px 20px;
+    padding: 12px 25px; /* Indent submenu items */
     font-size: 1em;
-    color: #555;
+    color: #444;
     text-align: right;
 }
 
