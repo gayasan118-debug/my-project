@@ -1,4 +1,3 @@
-
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -36,38 +35,42 @@ header {
     height: 60px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    overflow: visible; /* Allow menu to be visible */
 }
 
 header .header-inner {
-    position: relative; /* For absolute positioning of menu button */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
-    height: 60px;
+    height: 100%;
 }
 
 header .logo {
-    padding: 0;
-    z-index: 1001;
+    flex-shrink: 0;
 }
 
 header .logo img {
     height: 35px;
 }
 
+.header-right-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.h-tell-box {
+    font-size: 14px;
+}
+
 header .gnb {
     display: block;
     position: fixed;
     top: 0;
-    right: -280px; /* Refined width */
-    width: 280px;   /* Refined width */
+    right: -280px;
+    width: 280px;
     height: 100%;
     background-color: #fff;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
     z-index: 1000;
     padding-top: 60px;
     box-shadow: -2px 0 5px rgba(0,0,0,0.2);
@@ -101,45 +104,33 @@ header .gnb .depth02 {
     position: static;
     width: 100%;
     padding: 0;
-    background-color: #f0f0f0; /* Lighter background for submenu */
+    background-color: #f0f0f0;
     border-top: 1px solid #e0e0e0;
 }
 
 header .gnb .depth02 li a {
-    padding: 12px 25px; /* Indent submenu items */
+    padding: 12px 25px;
     font-size: 1em;
     color: #444;
     text-align: right;
 }
 
-header .header-right-menu {
-    display: flex; /* Make it visible */
-    align-items: center;
-    margin-right: 50px; /* Add space for the hamburger button */
-}
-
 /* Hamburger Menu */
 .mobile-menu-button {
+    position: static; /* Back in the flow */
     display: block;
-    position: absolute; /* Position relative to header-inner */
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 9999 !important;
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    padding: 5px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    background: none; /* Removed red background */
+    background: none;
     border: none;
 }
 
 .mobile-menu-button .line {
-    width: 25px;
+    width: 100%;
     height: 3px;
     background-color: #333;
-    margin: 5px auto;
+    margin: 5px 0;
     transition: all 0.3s ease-in-out;
 }
 
