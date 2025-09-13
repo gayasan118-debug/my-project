@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -285,4 +286,42 @@ footer .left_box {
         overflow-y: auto;
         overflow-x: hidden;
     }
+}
+
+/* Image specific adjustments */
+#main .con02 .txt_img {
+    width: 80%; /* Adjust width for mobile */
+    height: auto;
+    margin: 0 auto; /* Center the image */
+    display: block;
+    position: static; /* Remove absolute positioning */
+}
+
+#main .con02 .con02_swiper .item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure image fits within its container */
+}
+
+#main .con02_swiper_thumb .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#loc .loc-l img {
+    width: 100%;
+    height: auto;
+    position: static; /* Remove absolute positioning */
+}
+
+#main .con04 .t_slide_box .swiper .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#main .con05 .right_box img {
+    width: 100% !important; /* Override inline style */
+    height: auto !important;
 }
