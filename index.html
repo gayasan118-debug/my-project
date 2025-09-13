@@ -836,6 +836,41 @@ var g5_cookie_domain = "";
             }
         });
 
+                const con02TextSwiper = new Swiper('.slide_txt_box', {
+            effect: 'fade',
+            touchRatio: 0,
+            loop: true,
+            slidesPerView: 1
+        });
+
+		const con02MainSwiper = new Swiper('.con02_swiper', {
+            loop: true,
+            effect: 'fade',
+            fadeEffect: {
+                crossFade: true
+            },
+            touchRatio: 0,
+            slidesPerView: 1,
+            pagination: {
+                el: '.con02 .slide_page_num',
+                type: 'fraction',
+                formatFractionCurrent: num => ('' + num).slice(-2),
+                formatFractionTotal: num => ('' + num).slice(-2),
+                renderFraction: (cur, total) => `<span class="${cur}"></span> / <span class="${total}"></span>`
+            },
+            on: {
+                slideChange: function () {
+                    const idx = this.realIndex;
+                    con02TextSwiper.slideToLoop(idx);
+                    //con02ThumbSwiper.slideToLoop(idx);
+                    updateRollingText(this, idx);
+                },
+                init: function () {
+                    updateRollingText(this, this.realIndex);
+                }
+            }
+        });
+
         const con02ThumbSwiper = new Swiper('.con02_swiper_thumb', {
             slidesPerView: 3,
             spaceBetween: 8,
@@ -857,6 +892,146 @@ var g5_cookie_domain = "";
 				}
 			}
         });
+
+        const locMainSwiper = new Swiper('#loc .loc-l .swiper-container', {
+            loop: true,
+            speed: 600,
+            direction: 'vertical',
+            parallax: true,
+            slidesPerView: 1,
+            loopedSlides: 4,
+            navigation: {
+                nextEl: '#loc .slide_page_nation_box a:last-child',
+                prevEl: '#loc .slide_page_nation_box a:first-child',
+            },
+            touchRatio: 0,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            on: {
+                init: function () {
+                    updatePagination(this);
+                },
+                slideChange: function () {
+                    updatePagination(this);
+                }
+            }
+        });
+
+        const locInfoSwiper = new Swiper('#loc .loc-r .loc-info-slide .swiper-container', {
+            loop: true,
+            effect: 'fade',
+            slidesPerView: 1,
+            loopedSlides: 4,
+            touchRatio: 0
+        });
+
+        locMainSwiper.controller.control = locInfoSwiper;
+        locInfoSwiper.controller.control = locMainSwiper;
+
+        function updatePagination(swiper) {
+            const realIndex = swiper.realIndex + 1;
+            const total = swiper.slides.length - (swiper.loopedSlides * 2);
+            $current.text(realIndex < 10 ? '0' + realIndex : realIndex);
+            $total.text(total < 10 ? '0' + total : total);
+        }
+
+        if ($(window).width() > 768) {
+            // Swiper initializations for con02 and con03
+            const con02TextSwiper = new Swiper('.slide_txt_box', {
+                effect: 'fade',
+                touchRatio: 0,
+                loop: true,
+                slidesPerView: 1
+            });
+
+            const con02MainSwiper = new Swiper('.con02_swiper', {
+                loop: true,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                touchRatio: 0,
+                slidesPerView: 1,
+                pagination: {
+                    el: '.con02 .slide_page_num',
+                    type: 'fraction',
+                    formatFractionCurrent: num => ('' + num).slice(-2),
+                    formatFractionTotal: num => ('' + num).slice(-2),
+                    renderFraction: (cur, total) => `<span class="${cur}"></span> / <span class="${total}"></span>`
+                },
+                on: {
+                    slideChange: function () {
+                        const idx = this.realIndex;
+                        con02TextSwiper.slideToLoop(idx);
+                        updateRollingText(this, idx);
+                    },
+                    init: function () {
+                        updateRollingText(this, this.realIndex);
+                    }
+                }
+            });
+
+            const con02ThumbSwiper = new Swiper('.con02_swiper_thumb', {
+                slidesPerView: 3,
+                spaceBetween: 8,
+                loop: true,
+                initialSlide: 1,
+                slideToClickedSlide: true,
+                navigation: {
+                    nextEl: '.con02 .slide_page_nation_box a:last-child',
+                    prevEl: '.con02 .slide_page_nation_box a:first-child'
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false
+                },
+                on: {
+                    slideChangeTransitionStart : function(){
+                        const idx = this.realIndex;
+                        con02MainSwiper.slideTo(idx);
+                    }
+                }
+            });
+
+            const locMainSwiper = new Swiper('#loc .loc-l .swiper-container', {
+                loop: true,
+                speed: 600,
+                direction: 'vertical',
+                parallax: true,
+                slidesPerView: 1,
+                loopedSlides: 4,
+                navigation: {
+                    nextEl: '#loc .slide_page_nation_box a:last-child',
+                    prevEl: '#loc .slide_page_nation_box a:first-child',
+                },
+                touchRatio: 0,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                on: {
+                    init: function () {
+                        updatePagination(this);
+                    },
+                    slideChange: function () {
+                        updatePagination(this);
+                    }
+                }
+            });
+
+            const locInfoSwiper = new Swiper('#loc .loc-r .loc-info-slide .swiper-container', {
+                loop: true,
+                effect: 'fade',
+                slidesPerView: 1,
+                loopedSlides: 4,
+                touchRatio: 0
+            });
+
+            locMainSwiper.controller.control = locInfoSwiper;
+            locInfoSwiper.controller.control = locMainSwiper;
+        }
 
 		$(document).on('click', '.con02_swiper_thumb .item', function(){
 			/*

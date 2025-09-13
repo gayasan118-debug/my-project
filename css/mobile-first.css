@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -368,4 +369,25 @@ footer .left_box {
 #main .con05 .right_box img {
     width: 100% !important; /* Override inline style */
     height: auto !important;
+}
+
+/* Swiper specific adjustments for mobile when Swiper is not initialized */
+.swiper-wrapper {
+    display: block !important; /* Ensure content is stacked */
+    width: 100% !important;
+    transform: none !important; /* Remove any Swiper transforms */
+}
+
+.swiper-slide {
+    width: 100% !important;
+    margin-right: 0 !important;
+    display: block !important;
+}
+
+.swiper-slide-active {
+    opacity: 1 !important;
+}
+
+.swiper-slide-next, .swiper-slide-prev, .swiper-slide-duplicate {
+    display: none !important; /* Hide other slides */
 }
