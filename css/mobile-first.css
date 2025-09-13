@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -286,4 +287,21 @@ footer .left_box {
 
 .overlay.active {
     display: block;
+}
+
+#main {
+    overflow: visible !important;
+}
+
+.mv_slide .item .bg {
+    position: static !important;
+    width: 100%;
+    height: 100vh;
+    margin: 0 !important;
+}
+
+.mv_slide .item .bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
