@@ -58,6 +58,7 @@ var g5_cookie_domain = "";
 <script src="js/wrest.js?ver=210789"></script>
 </head>
 <body>
+<div class="overlay"></div>
 <div class="wrap ">
 	<header class="">
         <div class="header-inner">
@@ -1027,6 +1028,13 @@ var g5_cookie_domain = "";
         $('.mobile-menu-button').on('click', function() {
             $(this).toggleClass('active');
             $('.gnb').toggleClass('active');
+            $('.overlay').toggleClass('active');
+        });
+
+        $('.overlay').on('click', function() {
+            $('.mobile-menu-button').removeClass('active');
+            $('.gnb').removeClass('active');
+            $(this).removeClass('active');
         });
 
         // Mobile submenu toggle
