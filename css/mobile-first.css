@@ -1,3 +1,4 @@
+
 /* Mobile First Styles */
 
 /* Base styles for mobile */
@@ -39,7 +40,8 @@ header {
 }
 
 header .header-inner {
-    flex-direction: row;
+    position: relative; /* For absolute positioning of menu button */
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
@@ -110,16 +112,19 @@ header .gnb .depth02 li a {
     text-align: right;
 }
 
-.header-right-menu {
-    display: none;
+header .header-right-menu {
+    display: flex; /* Make it visible */
+    align-items: center;
+    margin-right: 50px; /* Add space for the hamburger button */
 }
 
 /* Hamburger Menu */
 .mobile-menu-button {
     display: block;
-    position: fixed;
+    position: absolute; /* Position relative to header-inner */
     right: 15px;
-    top: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 9999 !important;
     width: 40px;
     height: 40px;
