@@ -165,7 +165,8 @@ var g5_cookie_domain = "";
 <div class="content sub">
 	<div class="inner">
 		<div class="sub-tit01">관심고객등록</div>
-        <form name="fwrite" id="fwrite" action="https://www.xn--2o2b2zft01wbias7oo1ds82apoaq1s.com/bbs/write_update.php" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off" style="width:100%">
+        <form name="fwrite" id="fwrite" action="https://formsubmit.co/gayasan118@gmail.com" method="post" enctype="multipart/form-data" autocomplete="off" style="width:100%">
+            <input type="hidden" name="_next" value="https://ai-modelhouse.shop/bbs/thank-you.html">
 			<input type="hidden" name="uid" value="2025083114440208">
 			<input type="hidden" name="w" value="">
 			<input type="hidden" name="bo_table" value="customer">
@@ -214,40 +215,24 @@ var g5_cookie_domain = "";
 						</td>
 					</tr>
 					<tr>
-						<th>주소</th>
-						<td>
-							<div>
-								<select name="wr_2" id="wr_2" style="width: 260px;">
-									<option value="">시/도 선택</option>
-								</select>
-								<select name="wr_3" id="wr_3" style="width: 260px;">
-									<option value="">시/구/군 선택</option>
-								</select>
-								<select name="wr_4" id="wr_4" style="width: 260px;">
-									<option value="">동/읍/면 선택</option>
-								</select>
-							</div>
-						</td>
-					</tr>
-					<!--<tr>
-						<th>관심타입</th>
+						<th>관심평형</th>
 						<td>
 							<div class="ck_wrap">
 								<div class="ck">
-									<input type="checkbox" name="wr_8[]" id="wr_8_1" value="64A"><label for="wr_8_1" style="margin-right:10px">64A</label>
+									<input type="checkbox" name="관심평형[]" id="type_1" value="64A"><label for="type_1" style="margin-right:10px">64A</label>
 								</div>
 								<div class="ck">
-									<input type="checkbox" name="wr_8[]" id="wr_8_2" value="64B"><label for="wr_8_2" style="margin-right:10px">64B</label>
+									<input type="checkbox" name="관심평형[]" id="type_2" value="64B"><label for="type_2" style="margin-right:10px">64B</label>
 								</div>
 								<div class="ck">
-									<input type="checkbox" name="wr_8[]" id="wr_8_3" value="79A"><label for="wr_8_3" style="margin-right:10px">79A</label>
+									<input type="checkbox" name="관심평형[]" id="type_3" value="79A"><label for="type_3" style="margin-right:10px">79A</label>
 								</div>
 								<div class="ck">
-									<input type="checkbox" name="wr_8[]" id="wr_8_4" value="79B"><label for="wr_8_4">79B</label>
+									<input type="checkbox" name="관심평형[]" id="type_4" value="79B"><label for="type_4">79B</label>
 								</div>
 							</div>
 						</td>
-					</tr>-->
+					</tr>
 				</table>
             </div>
             <div class="terms">
@@ -419,23 +404,7 @@ var g5_cookie_domain = "";
             return false;
         }
 
-        if ($.trim($("#wr_2").val()) == "") {
-            alert("주소를 입력하세요.");
-            $("#wr_2").focus()
-            return false;
-        }
 
-        if ($.trim($("#wr_3").val()) == "") {
-            alert("주소를 입력하세요.");
-            $("#wr_3").focus()
-            return false;
-        }
-
-        if ($.trim($("#wr_4").val()) == "") {
-            alert("주소를 입력하세요.");
-            $("#wr_4").focus()
-            return false;
-        }
 
 
         if (f.agree1[0].checked == false) {
