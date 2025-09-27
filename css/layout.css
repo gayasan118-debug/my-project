@@ -297,7 +297,7 @@ header .sub .open_date{display: block;line-height: 32px;border-radius: 16px;widt
 	    overflow-x: scroll !important;
 	    overflow-y: hidden !important;
 	} */
-	header {padding:0 15px 0 15px; position:absolute !important; }
+	header {padding:0 15px 0 15px; }
 	header .head_in {padding:0 90px 0 90px;}
 	header.sub .head_in{padding: 0px 45px;}
 	header .menu .gnb1 > a {padding:0 10px;}
