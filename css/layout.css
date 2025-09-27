@@ -1450,7 +1450,7 @@ footer {
     transform: none;
 }
 
-.sub_menu{position: absolute;left: 0;bottom: -30px;width: 100%;z-index:2;}
+.sub_menu{position: fixed;left: 0;top: 90px;width: 100%;z-index:2;}
 .sub_menu .inner{background-color: var(--primary-color);box-shadow:5px 5px 10px rgba(0,0,0,0.2);display:flex; max-width: 1200px;}
 .sub_menu .home{width: 60px;height: 60px;}
 .sub_menu .home a {
@@ -1765,3 +1765,22 @@ footer {
 #light1 .black_overlay22{top: -100%;}
 #light1.active .black_overlay22{top: 0;}
 /* END main 추가 */
+
+/* Scroll-activated header styles */
+header.sub.scrolled {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.sub_menu.scrolled .inner {
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.05);
+}
+
+.sub_menu.scrolled .depth ul li a {
+    color: #333;
+}
+
+.sub_menu.scrolled .depth ul li:not(:last-of-type)::after {
+    background: #ddd;
+}

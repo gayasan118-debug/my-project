@@ -72,9 +72,9 @@ function number_format(data)
     
     data = data + '';
 
-    var sign = data.match(/^[\+\-]/);
+    var sign = data.match(/^["+"-"]/);
     if(sign) {
-        data = data.replace(/^[\+\-]/, "");
+        data = data.replace(/^["+"-"]/,"");
     }
 
     len = data.length;
@@ -137,7 +137,7 @@ function del(href)
         var iev = -1;
         if (navigator.appName == 'Microsoft Internet Explorer') {
             var ua = navigator.userAgent;
-            var re = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+            var re = new RegExp("MSIE ([0-9]{1,}[\\.0-9]{0,})");
             if (re.exec(ua) != null)
                 iev = parseFloat(RegExp.$1);
         }
@@ -753,4 +753,13 @@ $(function() {
 
         return true;
     });
+});
+
+// Sticky header for sub-pages
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 10) {
+        $('header.sub, .sub_menu').addClass('scrolled');
+    } else {
+        $('header.sub, .sub_menu').removeClass('scrolled');
+    }
 });
