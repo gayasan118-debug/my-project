@@ -178,7 +178,7 @@ header .gnb .depth02 > li:hover > a {
 
 
 header.sub {
-    position: absolute;
+    position: fixed;
 }
 /* header.sub h1 a{background: url(../images/logo-b.png?ver=2) no-repeat center;} */
 header.sub .menu .gnb1 > a{color:#000}
