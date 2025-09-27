@@ -29,6 +29,7 @@
 <link rel="stylesheet" href="../css/slick.css?ver=210789">
 <link rel="stylesheet" href="../swiper%408.4.7/swiper-bundle.min.css">
 <link rel="stylesheet" href="../css/layout.css?ver=210789">
+<link rel="stylesheet" href="../css/responsive.css?ver=210789">
 <!--[if lte IE 8]>
 <script src="https://www.xn--2o2b2zft01wbias7oo1ds82apoaq1s.com/js/html5.js"></script>
 <![endif]-->
@@ -124,16 +125,12 @@ var g5_cookie_domain = "";
                     <a href="../bbs/write.php.html?bo_table=customer"><span>관심고객등록</span></a>                    
                 </li>
             </ul>			
-			<div class="header-right-menu">
-				<div class="open pre_font">
-                    <b>8월 29일</b>
-                    <span>GRAND OPEN</span>
-                </div>
-                <a href="tel:1688-0458" class="jost_font h-tell-box">
-                    <img src="../images/call_icon.png" alt="전화아이콘">
-                    <span>1688-0458</span>
-                </a>
-			</div>
+						<div class="header-right-menu">
+			                <a href="tel:1688-0458" class="jost_font h-tell-box">
+			                    <img src="../images/call_icon.png" alt="전화아이콘">
+			                    <span>1688-0458</span>
+			                </a>
+							<div class="hamburger"><span></span><span></span><span></span></div>			</div>
 		</div>
 	</header>
 
@@ -231,7 +228,21 @@ var g5_cookie_domain = "";
 </footer>
 </div>
 
+<script>
+    $(function() {
+        $('.hamburger').on('click', function() {
+            $('.gnb').toggleClass('active');
+            $('body').toggleClass('menu-open');
+        });
 
+        $('.gnb > li > a').on('click', function(e) {
+            if (window.innerWidth <= 768 && $(this).siblings('.depth02').length > 0) {
+                e.preventDefault();
+                $(this).parent().toggleClass('active');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
