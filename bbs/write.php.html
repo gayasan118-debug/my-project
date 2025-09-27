@@ -211,18 +211,10 @@ var g5_cookie_domain = "";
 						</td>
 					</tr>
 					<tr>
-						<th>주소</th>
+						<th>문의 사항</th>
 						<td>
 							<div>
-								<select name="wr_2" id="wr_2" style="width: 260px;">
-									<option value="">시/도 선택</option>
-								</select>
-								<select name="wr_3" id="wr_3" style="width: 260px;">
-									<option value="">시/구/군 선택</option>
-								</select>
-								<select name="wr_4" id="wr_4" style="width: 260px;">
-									<option value="">동/읍/면 선택</option>
-								</select>
+								<textarea name="wr_inquiry" id="wr_inquiry" rows="5" style="width: 100%; padding: 10px; border: 1px solid #ccc;"></textarea>
 							</div>
 						</td>
 					</tr>
@@ -416,23 +408,6 @@ var g5_cookie_domain = "";
             return false;
         }
 
-        if ($.trim($("#wr_2").val()) == "") {
-            alert("주소를 입력하세요.");
-            $("#wr_2").focus()
-            return false;
-        }
-
-        if ($.trim($("#wr_3").val()) == "") {
-            alert("주소를 입력하세요.");
-            $("#wr_3").focus()
-            return false;
-        }
-
-        if ($.trim($("#wr_4").val()) == "") {
-            alert("주소를 입력하세요.");
-            $("#wr_4").focus()
-            return false;
-        }
 
 
         if (f.agree1[0].checked == false) {
